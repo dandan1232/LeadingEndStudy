@@ -1,0 +1,61 @@
+<!-- 1. 解决块级元素垂直⽅向的边距重叠问题 -->
+<section id="father">
+    <style>
+        #father {
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        #father .child {
+            background-color: red;
+            margin: 15px auto 20px;
+        }
+    </style>
+    <div class="child">这是第一个div</div>
+    <div style="overflow: hidden">
+        <div class="child">这是第二个div</div>
+    </div>
+</section>
+
+</br>
+
+<!-- 2.清除浮動 -->
+<section id="father2">
+    <style>
+        #father2 {
+            background-color: pink;
+            overflow: auto;
+        }
+
+        #father2 .child {
+            font-size: 58px;
+            float: left;
+        }
+    </style>
+    <div class="child">这是⼀个浮动元素</div>
+</section>
+<br>
+
+<!-- 3.解决元素浮动后发⽣重叠的问题 -->
+<section id="father3">
+    <style>
+        #father3 {
+            background-color: red;
+        }
+
+        #father3 .left {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        #father3 .right {
+            background-color: #ccc;
+            height: 120px;
+            overflow: hidden;
+        }
+    </style>
+    <div class="left"></div>
+    <div class="right"></div>
+</section>
