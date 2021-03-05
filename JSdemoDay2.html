@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <script>
+        var x = '你好 JavaScript';
+        document.write(x);
+    </script>
+    <br>
+
+    <script>
+        var X = 100;
+        document.write(typeof X);
+        document.write('<br>');
+        var Y = "hhh";
+        document.write(typeof Y);
+        document.write('<br>');
+    </script>
+
+    <script>
+        var hello = 'hello world';
+        var age = 21;
+        var live = true;
+        var girlfriend = null;
+        var favsong = undefined;
+        var Car = {
+            'name': '奔驰',
+            'status': '漏油'
+        };
+        document.write(hello + '<br>' + age + '<br>' + live + '<br>'
+            + girlfriend + '<br>' + favsong + '<br>' + Car.name + " " + Car.status)
+        document.write("<br>")
+    </script>
+
+
+    <script>
+        // 数字
+        var x1 = 34.00; // 使用小数点来写，输出结果也为34 
+        var x2 = 34; // 不使用小数点来写
+        //这个案例中 x1 与 x2 是完全相等的
+        var y = 123e5; // 12300000
+        var z = 123e-5; // 0.00123
+        document.write(x1 + " " + x2 + " " + y + " " + z + "<br>");
+
+        // 字符串
+        var answer1 = "It's alright";
+        var answer2 = "He is called 'Loen'";
+        var answer3 = 'He is called "Loen"';
+        document.write(answer1 + "<br>" + answer2 + "<br>" + answer3 + "<br>")
+
+        var sayHello = 'Hello! \'我是一名JavaScript程序员.\' ';
+        document.write(sayHello + "<br>");
+
+        var x = 3;
+        var y = 4;
+        x = y;
+        document.write(x + "<br>");
+        document.write(y + "<br>");
+
+        document.write(typeof undefined === "undefined") // true
+        document.write("<br>")
+        document.write(typeof true === "boolean") // true
+        document.write("<br>")
+        document.write(typeof 42 === "number") // true
+        document.write("<br>")
+        document.write(typeof "42" === "string") // true
+        document.write("<br>")
+        document.write(typeof { lift: 42 } === "object") // true
+        document.write("<br>")
+        // ES6中新加入的Symbol类型
+        document.write(typeof Symbol() === "symbol") // true
+        document.write("<br>")
+
+        var coursename = 'JavaScript 微课';
+        var character = coursename[11]; //微
+        document.write(character + "<br>")
+
+        var intro = 'I\'m Loen \nThis is My List';
+        document.write(intro + "<br>")
+
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var len = txt.length;
+        document.write(len+"<br>"); //26
+
+    </script>
+
+</head>
+
+
+<body>
+
+</body>
+
+</html>
