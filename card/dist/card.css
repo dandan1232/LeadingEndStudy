@@ -13,7 +13,7 @@
   box-sizing: border-box;
   margin: 5px;
   padding: 10px;
-  background-color: #6b91b6;
+  /* background-color: #6b91b6; */
   color: #333;
   cursor: pointer;
 }
