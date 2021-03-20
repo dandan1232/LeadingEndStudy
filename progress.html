@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>进度条</title>
+    <style>
+      #app {
+        margin: 50px;
+      }
+      .item {
+        box-sizing: border-box;
+        margin: 20px 0;
+        width: 180px;
+        height: 180px;
+        font-size: 20px;
+        line-height: 180px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <progress
+        :value="value"
+        max="100"
+        @Click="changeValue($event)"
+        @mousedown="down($event)"
+        @mousemove="getValue($event)"
+        @mouseup="up($event)"
+      ></progress>
+      <span>{{value.toString().split('.')[0]}}%</span>
+      <div v-if="value >= 100" :style="styleBody">value = 100 !</div>
+      <div class="item" :style="{backgroundColor: rgb}">变色</div>
+      <div
+        class="item"
+        :style="{backgroundColor: '#7bafd4', opacity: value/100+0.1}"
+      >透明度</div>
+      <br />
+      <span id="color-change" :style="{color: rgb, 'font-size': value + 'px'}"
+        >字体跟随
+      </span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          value: 0,
+          flag: false,
+          rgb: "#5c5c5c",
+          // 对象写法
+          styleBody: {
+            fontSize: "2em",
+            height: "10%",
+            "background-color": "#7bafd4",
+          },
+        },
+        methods: {
+          changeValue(ev) {
+            this.value = ((ev.screenX - 59) / 157) * 100;
+            this.changeColor();
+          },
+          changeColor() {
+            var sp = document.getElementById("change-color");
+            var r = this.randomColor();
+            var g = this.randomColor();
+            var b = this.randomColor();
+            var color = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+            this.rgb = color;
+          },
+          down(ev) {
+            this.flag = true;
+          },
+          getValue(ev) {
+            if (this.flag) {
+              this.value = ((ev.screenX - 59) / 157) * 100;
+              this.changeColor();
+            }
+          },
+          up(ev) {
+            this.flag = false;
+          },
+          randomColor() {
+            var c = Math.floor(Math.random() * 256);
+            while (c == 0 || c > 255) {
+              c = Math.floor(Math.random() * 256);
+            }
+            return c;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
