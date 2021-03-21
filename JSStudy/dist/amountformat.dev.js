@@ -32,9 +32,6 @@ function convertMoney(money, type) {
   return money;
 }
 
-console.log(convertMoney(311546161685)); //
+console.log(convertMoney(311546161685)); //311, 546, 161, 685.00
 
-311, 546, 161, 685.00;
-console.log(convertMoney(311546161685, 0)); //
-
-311, 546, 161, 685;
+console.log(convertMoney(311546161685, 0)); //311, 546, 161, 685
