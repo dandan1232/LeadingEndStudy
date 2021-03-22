@@ -28,10 +28,11 @@
             created() {
                 setCookie('name', 'hello ldd', 20 * 1000)
                 setCookie('age', '20')
-                setCookie('height','793')
+                // setCookie('height','793')
+                
                 this.name = getCookie('name')
                 this.age = getCookie('age')
-                this.height = getCookie('height')
+                this.height = getPageHeight('height')
                 console.log(getCookie('name'))
                 console.log(getCookie('age'))
                 console.log(getCookie('height'))
