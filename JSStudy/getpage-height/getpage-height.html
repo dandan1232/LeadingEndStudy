@@ -13,7 +13,7 @@
         <h2>JS设置cookie和获取cookie</h2>
         <h3>name:{{name}}</h3>
         <h3>age:{{age}}</h3>
-        <h3>height:{{number}}</h3>
+        <h3>height:{{height}}</h3>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./getpage-height.js"></script>
@@ -23,12 +23,12 @@
             data: {
                 name: '',
                 age: 0,
-                height:0,
+                height:'height',
             },
             created() {
                 setCookie('name', 'hello ldd', 20 * 1000)
                 setCookie('age', '20')
-                // setCookie('height','793')
+                setCookie('height','793')
                 
                 this.name = getCookie('name')
                 this.age = getCookie('age')
